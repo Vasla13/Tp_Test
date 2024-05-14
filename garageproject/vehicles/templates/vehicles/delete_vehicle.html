@@ -1,0 +1,10 @@
+{% extends 'vehicles/base.html' %}
+
+{% block content %}
+<h2>Supprimer le véhicule</h2>
+<p>Êtes-vous sûr de vouloir supprimer "{{ vehicle.brand }}" ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmer</button>
+</form>
+{% endblock %}

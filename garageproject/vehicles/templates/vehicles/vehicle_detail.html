@@ -1,0 +1,12 @@
+{% extends 'vehicles/base.html' %}
+
+{% block content %}
+<h2>Détails du véhicule</h2>
+<p>Marque : {{ vehicle.brand }}</p>
+<p>Date d'achat : {{ vehicle.purchase_date }}</p>
+<p>Nombre de places : {{ vehicle.number_of_seats }}</p>
+<p>Description : {{ vehicle.description }}</p>
+<p>Longueur : {{ vehicle.length }}</p>
+<p>Climatisation : {% if vehicle.has_air_conditioning %}Oui{% else %}Non{% endif %}</p>
+<a href="{% url 'vehicle_list' %}">Retour à la liste des véhicules</a>
+{% endblock %}

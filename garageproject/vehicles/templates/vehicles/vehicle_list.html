@@ -1,0 +1,14 @@
+{% extends 'vehicles/base.html' %}
+
+{% block content %}
+<h2>Liste des véhicules</h2>
+<ul>
+    {% for vehicle in vehicles %}
+        <li>
+            <a href="{% url 'vehicle_detail' vehicle.id %}">{{ vehicle.brand }} ({{ vehicle.purchase_date }})</a>
+            - <a href="{% url 'edit_vehicle' vehicle.id %}">Modifier</a>
+            - <a href="{% url 'delete_vehicle' vehicle.id %}">Supprimer</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
